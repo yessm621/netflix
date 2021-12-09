@@ -24,4 +24,7 @@ public class Plan {
     @Column(columnDefinition = "int default 0")
     private int price;
 
+    @Column(columnDefinition = "int default 1")
+    private int ccu; // 동시 접속자 수
+
 }
