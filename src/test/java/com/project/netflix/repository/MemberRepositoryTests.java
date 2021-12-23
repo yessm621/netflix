@@ -28,9 +28,9 @@ public class MemberRepositoryTests {
                     .email("user" + i + "@gmail.com")
                     .name("이름" + i)
                     .phone("0101234" + i)
-                    .cardNumber("123412341234"+i)
+//                    .cardNumber("123412341234"+i)
                     .password("qwer1234")
-                    .plan(plan)
+//                    .plan(plan)
                     .build();
 
             memberRepository.save(member);
