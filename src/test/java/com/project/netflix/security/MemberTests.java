@@ -21,6 +21,11 @@ public class MemberTests {
 
     @Test
     public void insertDummies() {
+
+        // 1~80: USER
+        // 81~90: USER, MANAGER
+        // 91~100: USER, MANAGER, ADMIN
+
         IntStream.rangeClosed(1, 100).forEach(i -> {
             Member member = Member.builder()
                     .email("user" + i + "@gmail.com")

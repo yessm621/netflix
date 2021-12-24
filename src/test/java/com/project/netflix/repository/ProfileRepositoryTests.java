@@ -14,7 +14,7 @@ public class ProfileRepositoryTests {
     @Autowired
     ProfileRepository profileRepository;
 
-    @Test
+    /*@Test
     public void createProfile() {
         IntStream.rangeClosed(1, 400).forEach(i -> {
             Long memberId = (long) (Math.random() * 100) + 1;
@@ -28,5 +28,5 @@ public class ProfileRepositoryTests {
 
             profileRepository.save(profile);
         });
-    }
+    }*/
 }
