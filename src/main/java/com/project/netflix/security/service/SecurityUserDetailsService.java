@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class SecurityUserDetailsService implements UserDetailsService {
 
-    private MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -28,7 +28,7 @@ public class SecurityUserDetailsService implements UserDetailsService {
 
         Optional<Member> result = memberRepository.findByEmail(username, false);
 
-        if (result.isPresent()) {
+        if (!result.isPresent()) {
             throw new UsernameNotFoundException("Check Email or Social");
         }
 
@@ -46,6 +46,8 @@ public class SecurityUserDetailsService implements UserDetailsService {
                         .collect(Collectors.toSet())
         );
 
-        return null;
+        authMember.setName(member.getName());
+
+        return authMember;
     }
 }

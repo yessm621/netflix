@@ -23,13 +23,13 @@ public class Member extends baseEntity {
     @Column(length = 25, nullable = false)
     private String name;
 
-    @Column(length = 11)
-    private String phone;
+//    @Column(length = 11)
+//    private String phone;
 
 //    @Column(length = 16, nullable = false)
 //    private String cardNumber;
 
-    private Boolean fromSocial;
+    private boolean fromSocial;
 
     @ElementCollection(fetch = FetchType.LAZY)
     @Builder.Default
