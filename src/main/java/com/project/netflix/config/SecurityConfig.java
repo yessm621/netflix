@@ -27,14 +27,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable(); // csrf 토큰 발행 안함
         http.logout();
     }
-
-    /*@Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
-        // 사용자 계정은 user1
-        auth.inMemoryAuthentication().withUser("user1")
-                // 1111 패스워드 인코딩 결과
-                .password("$2a$10$yfgSY/2154i6Tf9/s83PCeCB/xo1L1/7dtGv1XG2mN4l3Qwlz05Ze")
-                .roles("USER");
-    }*/
 }

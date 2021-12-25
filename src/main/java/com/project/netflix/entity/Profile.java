@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @ToString(exclude = "member")
 @Builder
-public class Profile extends baseEntity {
+public class Profile extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

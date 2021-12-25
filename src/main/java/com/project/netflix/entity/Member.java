@@ -12,15 +12,13 @@ import java.util.Set;
 @Builder
 @Getter
 @ToString
-public class Member extends baseEntity {
+public class Member extends BaseEntity {
 
     @Id
     private String email;
 
-    @Column(length = 255, nullable = false)
     private String password;
 
-    @Column(length = 25, nullable = false)
     private String name;
 
 //    @Column(length = 11)

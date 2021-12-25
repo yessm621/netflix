@@ -28,7 +28,7 @@ public class SecurityUserDetailsService implements UserDetailsService {
 
         Optional<Member> result = memberRepository.findByEmail(username, false);
 
-        if (!result.isPresent()) {
+        if (result.isEmpty()) {
             throw new UsernameNotFoundException("Check Email or Social");
         }
 
@@ -42,12 +42,12 @@ public class SecurityUserDetailsService implements UserDetailsService {
                 member.getPassword(),
                 member.isFromSocial(),
                 member.getRoleSet().stream()
-                        .map(role -> new SimpleGrantedAuthority("ROLE_"+role.name()))
+                        .map(role -> new SimpleGrantedAuthority("ROLE_" + role.name()))
                         .collect(Collectors.toSet())
         );
 
         authMember.setName(member.getName());
-
+        System.out.println(authMember.getAuthorities().toString());
         return authMember;
     }
 }
